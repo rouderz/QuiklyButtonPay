@@ -1,10 +1,10 @@
 {
   "name": "quiklypay",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Buttons Pay",
   "main": "index.js",
   "repository": {
-    "url": "git@github.com:rouderz/QuiklyButtonPay.git",
+    "url": "git+ssh://git@github.com/rouderz/QuiklyButtonPay.git",
     "type": "git"
   },
   "author": "Wolfgang Welcomez",
@@ -17,7 +17,22 @@
     "antd": "^4.16.7",
     "axios": "^0.21.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "build": "rm -rf dist && NODE_ENV=production && npm run tsc && babel src/lib --out-dir dist --extensions '.ts,.tsx' --copy-files"
+  },
+  "bugs": {
+    "url": "https://github.com/rouderz/QuiklyButtonPay/issues"
+  },
+  "homepage": "https://github.com/rouderz/QuiklyButtonPay#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
     "typescript": "^4.3.5"
   }
 }
