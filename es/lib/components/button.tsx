@@ -1,6 +1,5 @@
 import React, {FunctionComponent, useState} from 'react';
-import 'antd/dist/antd.css';
-import { Button } from 'antd';
+import './components/css/style.css';
 
 interface ButtonInterface {
    receiveEmail: string,
@@ -12,21 +11,28 @@ interface ButtonInterface {
 }
 
 const Index:FunctionComponent<ButtonInterface> = ({receiveEmail, receiveName, amount, production, description, disabled}) => { 
-   const [isModalVisible, setModalVisible] = useState(false);
+   const [isModalVisible, setModalVisible] = useState<Boolean>(false);
    
    return (
       <div>
-      <Button
-        type="primary"
-        size="large"
+      <button
         disabled = {disabled}
         onClick={() => setModalVisible(true)}
         > 
       {"Pagar Ahora"} 
-      </Button> 
+      </button> 
       {
          isModalVisible ? 
-         <iframe src="https://www.youtube.com/embed/cWDJoK8zw58"></iframe>
+         <div hidden={!isModalVisible}>
+            <div className="modal-background" onClick={() => setModalVisible(false)}>
+            <iframe className="modal-card"
+                     src="https://paybox.quikly.app/paybox/paybox.html" 
+                     width="100%" 
+                     height="100%" 
+                     scrolling="no"
+                  />
+            </div>
+         </div>
          :
          <></>
       }

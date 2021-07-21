@@ -9,9 +9,7 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-require("antd/dist/antd.css");
-
-var _antd2 = require("antd");
+require("./components/css/style.css");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -42,16 +40,25 @@ var Index = function Index(_ref) {
       isModalVisible = _useState2[0],
       setModalVisible = _useState2[1];
 
-  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_antd2.Button, {
-    type: "primary",
-    size: "large",
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
     disabled: disabled,
     onClick: function onClick() {
       return setModalVisible(true);
     }
-  }, "Pagar Ahora"), isModalVisible ? /*#__PURE__*/_react["default"].createElement("iframe", {
-    src: "https://www.youtube.com/embed/cWDJoK8zw58"
-  }) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
+  }, "Pagar Ahora"), isModalVisible ? /*#__PURE__*/_react["default"].createElement("div", {
+    hidden: !isModalVisible
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "modal-background",
+    onClick: function onClick() {
+      return setModalVisible(false);
+    }
+  }, /*#__PURE__*/_react["default"].createElement("iframe", {
+    className: "modal-card",
+    src: "https://paybox.quikly.app/paybox/paybox.html",
+    width: "100%",
+    height: "100%",
+    scrolling: "no"
+  }))) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
 };
 
 var _default = Index;
