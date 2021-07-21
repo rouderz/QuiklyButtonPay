@@ -9,7 +9,7 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-require("./components/css/style.css");
+require("./css/style.css");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -27,7 +27,7 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var Index = function Index(_ref) {
+var Button = function Button(_ref) {
   var receiveEmail = _ref.receiveEmail,
       receiveName = _ref.receiveName,
       amount = _ref.amount,
@@ -41,11 +41,12 @@ var Index = function Index(_ref) {
       setModalVisible = _useState2[1];
 
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
+    className: "QuiklyButton",
     disabled: disabled,
     onClick: function onClick() {
       return setModalVisible(true);
     }
-  }, "Pagar Ahora"), isModalVisible ? /*#__PURE__*/_react["default"].createElement("div", {
+  }), isModalVisible ? /*#__PURE__*/_react["default"].createElement("div", {
     hidden: !isModalVisible
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "modal-background",
@@ -61,5 +62,5 @@ var Index = function Index(_ref) {
   }))) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
 };
 
-var _default = Index;
+var _default = Button;
 exports["default"] = _default;

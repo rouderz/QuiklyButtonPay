@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useState} from 'react';
-import './components/css/style.css';
+import './css/style.css';
 
 interface ButtonInterface {
    receiveEmail: string,
@@ -10,17 +10,16 @@ interface ButtonInterface {
    disabled: boolean,
 }
 
-const Index:FunctionComponent<ButtonInterface> = ({receiveEmail, receiveName, amount, production, description, disabled}) => { 
+const Button:FunctionComponent<ButtonInterface> = ({receiveEmail, receiveName, amount, production, description, disabled}) => { 
    const [isModalVisible, setModalVisible] = useState<Boolean>(false);
    
    return (
       <div>
       <button
+      className="QuiklyButton"
         disabled = {disabled}
         onClick={() => setModalVisible(true)}
-        > 
-      {"Pagar Ahora"} 
-      </button> 
+        /> 
       {
          isModalVisible ? 
          <div hidden={!isModalVisible}>
@@ -41,4 +40,4 @@ const Index:FunctionComponent<ButtonInterface> = ({receiveEmail, receiveName, am
    )
 }
 
-export default Index;
+export default Button;

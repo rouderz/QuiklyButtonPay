@@ -1,3 +1,3 @@
-import Button from './components/button';
+import ButtonQuikly from './es/lib/components/Button';
 
-export {Button};
+export {ButtonQuikly};

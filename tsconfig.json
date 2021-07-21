@@ -16,5 +16,5 @@
   },
   "include": [
     "es" // <-- change this to where your source files are
-, "es/lib/components", "es/lib"  ]
+, "es/lib/components", "es/lib", "index.js"  ]
 }
