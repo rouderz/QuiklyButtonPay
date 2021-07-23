@@ -95,7 +95,7 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
          <div hidden={!isModalVisible}>
             <div className="modal-background" onClick={() => setModalVisible(false)}>
                <iframe className="modal-card"
-                     src="https://paybox.quikly.app/paybox/paybox.html" 
+                     src="https://paybox.quikly.app/cdn/reactjs/paybox.html" 
                      width="100%" 
                      height="100%" 
                      scrolling="no"

@@ -118,7 +118,7 @@ var Button = function Button(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement("iframe", {
     className: "modal-card",
-    src: "https://paybox.quikly.app/paybox/paybox.html",
+    src: "https://paybox.quikly.app/cdn/reactjs/paybox.html",
     width: "100%",
     height: "100%",
     scrolling: "no",
