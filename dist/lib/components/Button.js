@@ -9,7 +9,15 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _reactHelmet = require("react-helmet");
+
+var _validator = _interopRequireDefault(require("validator"));
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
 require("./css/style.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -28,23 +36,78 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Button = function Button(_ref) {
-  var receiveEmail = _ref.receiveEmail,
-      receiveName = _ref.receiveName,
-      amount = _ref.amount,
-      production = _ref.production,
-      description = _ref.description,
-      disabled = _ref.disabled;
+  var parameters = _ref.parameters;
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isModalVisible = _useState2[0],
       setModalVisible = _useState2[1];
 
+  if (!_validator["default"].isEmail(parameters.email)) {}
+
+  var customFunction = "\n      parameters = {\n         isProduction: ".concat(parameters.isProduction, ",\n         amount: \"").concat(parameters.amount, "\",\n         fullName: \"").concat(parameters.fullName, "\",\n         email: \"").concat(parameters.email, "\",\n         receiveEmail: \"").concat(parameters.receiveEmail, "\",\n         receiveName: \"").concat(parameters.receiveName, "\",\n         successRedirect: \"").concat(parameters.successRedirect, "\",\n         errorRedirect: \"").concat(parameters.errorRedirect, "\"              \n      },\n      setTimeout(function () {\n         iframe.contentWindow.postMessage(parameters, '*');\n      }, 5000);\n  ");
+
+  var validations = function validations(params) {
+    if (Object.keys(params.parameters).length === 0) {
+      _sweetalert["default"].fire({
+        icon: 'error',
+        title: 'Parametros Vacios',
+        text: 'No pueden estar vacios los parametros'
+      });
+
+      return setModalVisible(false);
+    }
+
+    if (!_validator["default"].isURL(params.parameters.successRedirect)) {
+      _sweetalert["default"].fire({
+        icon: 'error',
+        title: 'Datos Erroneos',
+        text: 'La Url ingresada no es valida'
+      });
+
+      return setModalVisible(false);
+    }
+
+    if (!_validator["default"].isURL(params.parameters.errorRedirect)) {
+      _sweetalert["default"].fire({
+        icon: 'error',
+        title: 'Datos Erroneos',
+        text: 'La Url ingresada no es valida'
+      });
+
+      return setModalVisible(false);
+    }
+
+    if (!_validator["default"].isEmail(params.parameters.email)) {
+      _sweetalert["default"].fire({
+        icon: 'error',
+        title: 'Datos Erroneos',
+        text: 'El email no es valido'
+      });
+
+      return setModalVisible(false);
+    }
+
+    if (!_validator["default"].isEmail(params.parameters.receiveEmail)) {
+      _sweetalert["default"].fire({
+        icon: 'error',
+        title: 'Datos Erroneos',
+        text: 'El email no es valido'
+      });
+
+      return setModalVisible(false);
+    }
+
+    return setModalVisible(true);
+  };
+
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
     className: "QuiklyButton",
-    disabled: disabled,
+    disabled: parameters.disabled,
     onClick: function onClick() {
-      return setModalVisible(true);
+      return validations({
+        parameters: parameters
+      });
     }
   }), isModalVisible ? /*#__PURE__*/_react["default"].createElement("div", {
     hidden: !isModalVisible
@@ -59,7 +122,11 @@ var Button = function Button(_ref) {
     width: "100%",
     height: "100%",
     scrolling: "no"
-  }))) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
+  }), /*#__PURE__*/_react["default"].createElement(_reactHelmet.Helmet, null, /*#__PURE__*/_react["default"].createElement("script", {
+    src: "https://code.jquery.com/jquery-2.2.4.js"
+  }), /*#__PURE__*/_react["default"].createElement("script", {
+    type: "text/javascript"
+  }, customFunction)))) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null));
 };
 
 var _default = Button;
