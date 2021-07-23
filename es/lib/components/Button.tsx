@@ -99,6 +99,7 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
                      width="100%" 
                      height="100%" 
                      scrolling="no"
+                     id="iframe"
                   />
                   <Helmet>
                      <script src="https://code.jquery.com/jquery-2.2.4.js"></script>

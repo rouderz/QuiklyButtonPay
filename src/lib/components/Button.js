@@ -121,7 +121,8 @@ var Button = function Button(_ref) {
     src: "https://paybox.quikly.app/paybox/paybox.html",
     width: "100%",
     height: "100%",
-    scrolling: "no"
+    scrolling: "no",
+    id: "iframe"
   }), /*#__PURE__*/_react["default"].createElement(_reactHelmet.Helmet, null, /*#__PURE__*/_react["default"].createElement("script", {
     src: "https://code.jquery.com/jquery-2.2.4.js"
   }), /*#__PURE__*/_react["default"].createElement("script", {
