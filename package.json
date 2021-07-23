@@ -1,6 +1,6 @@
 {
   "name": "quiklypay",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Buttons Pay",
   "main": "index.js",
   "repository": {
@@ -12,7 +12,12 @@
   "dependencies": {
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
-    "react": "^17.0.2"
+    "@types/react-helmet": "^6.1.2",
+    "@types/validator": "^13.6.3",
+    "react": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "sweetalert2": "^11.0.19",
+    "validator": "^13.6.0"
   },
   "scripts": {
     "tsc": "tsc",
