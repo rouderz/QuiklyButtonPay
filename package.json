@@ -22,7 +22,8 @@
   "scripts": {
     "tsc": "tsc",
     "local": "rm -rf dist && NODE_ENV=production && npm run tsc && babel es/lib --out-dir dist/lib --extensions '.ts,.tsx' --copy-files",
-    "build": "rm -rf src && NODE_ENV=production && npm run tsc && babel es/lib --out-dir src/lib --extensions '.ts,.tsx' --copy-files"
+    "build": "rm -rf src && NODE_ENV=production && npm run tsc && babel es/lib --out-dir src/lib --extensions '.ts,.tsx' --copy-files",
+    "publish": "yarn publish"
   },
   "bugs": {
     "url": "https://github.com/rouderz/QuiklyButtonPay/issues"
