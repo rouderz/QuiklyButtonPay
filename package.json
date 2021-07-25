@@ -1,6 +1,6 @@
 {
   "name": "quiklypay",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Buttons Pay",
   "main": "index.js",
   "repository": {
@@ -22,8 +22,7 @@
   "scripts": {
     "tsc": "tsc",
     "local": "rm -rf dist && NODE_ENV=production && npm run tsc && babel es/lib --out-dir dist/lib --extensions '.ts,.tsx' --copy-files",
-    "build": "rm -rf src && NODE_ENV=production && npm run tsc && babel es/lib --out-dir src/lib --extensions '.ts,.tsx' --copy-files",
-    "publish": "yarn publish"
+    "build": "rm -rf src && NODE_ENV=production && npm run tsc && babel es/lib --out-dir src/lib --extensions '.ts,.tsx' --copy-files"
   },
   "bugs": {
     "url": "https://github.com/rouderz/QuiklyButtonPay/issues"
