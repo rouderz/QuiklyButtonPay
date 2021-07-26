@@ -75,7 +75,7 @@ export default Component;
 
 ```ts
 
-    isProduction: boolean -> (required)
+    isProduction: boolean(default is false to development) -> (optional)
     amount: number -> (required)
     fullName: string -> (required)
     email: string -> (required)
@@ -83,5 +83,5 @@ export default Component;
     receiveName: string -> (required)
     successRedirect: string -> (required)
     errorRedirect: string -> (required)
-    disabled: boolean -> (required)
+    disabled: boolean -> (optional)
 ```

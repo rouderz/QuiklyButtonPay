@@ -14,7 +14,7 @@ interface buttonInterface {
      receiveName: string
      successRedirect: string
      errorRedirect: string
-     disabled: boolean
+     disabled?: boolean
    }
  }
 
@@ -25,7 +25,7 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
 
    const customFunction = `
       parameters = {
-         isProduction: ${parameters.isProduction},
+         isProduction: ${parameters.isProduction ? parameters.isProduction : false},
          amount: "${parameters.amount}",
          fullName: "${parameters.fullName}",
          email: "${parameters.email}",
@@ -87,7 +87,7 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
       <div>
       <button
       className="QuiklyButton"
-        disabled = {parameters.disabled}
+        disabled = {parameters.disabled ? parameters.disabled : false}
         onClick={() => validations({parameters})}
         /> 
       {
