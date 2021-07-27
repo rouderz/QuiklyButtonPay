@@ -45,7 +45,7 @@ var Button = function Button(_ref) {
 
   if (!_validator["default"].isEmail(parameters.email)) {}
 
-  var customFunction = "\n      parameters = {\n         isProduction: ".concat(parameters.isProduction, ",\n         amount: \"").concat(parameters.amount, "\",\n         fullName: \"").concat(parameters.fullName, "\",\n         email: \"").concat(parameters.email, "\",\n         receiveEmail: \"").concat(parameters.receiveEmail, "\",\n         receiveName: \"").concat(parameters.receiveName, "\",\n         successRedirect: \"").concat(parameters.successRedirect, "\",\n         errorRedirect: \"").concat(parameters.errorRedirect, "\"              \n      },\n      setTimeout(function () {\n         iframe.contentWindow.postMessage(parameters, '*');\n      }, 5000);\n  ");
+  var customFunction = "\n      parameters = {\n         isProduction: ".concat(parameters.isProduction ? parameters.isProduction : false, ",\n         amount: \"").concat(parameters.amount, "\",\n         fullName: \"").concat(parameters.fullName, "\",\n         email: \"").concat(parameters.email, "\",\n         receiveEmail: \"").concat(parameters.receiveEmail, "\",\n         receiveName: \"").concat(parameters.receiveName, "\",\n         successRedirect: \"").concat(parameters.successRedirect, "\",\n         errorRedirect: \"").concat(parameters.errorRedirect, "\"              \n      },\n      setTimeout(function () {\n         iframe.contentWindow.postMessage(parameters, '*');\n      }, 5000);\n  ");
 
   var validations = function validations(params) {
     if (Object.keys(params.parameters).length === 0) {
@@ -103,7 +103,7 @@ var Button = function Button(_ref) {
 
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
     className: "QuiklyButton",
-    disabled: parameters.disabled,
+    disabled: parameters.disabled ? parameters.disabled : false,
     onClick: function onClick() {
       return validations({
         parameters: parameters

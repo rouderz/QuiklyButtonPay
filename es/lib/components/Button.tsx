@@ -6,7 +6,7 @@ import './css/style.css';
 
 interface buttonInterface {
    parameters: {
-     isProduction: boolean
+     isProduction?: boolean
      amount: number
      fullName: string
      email: string
