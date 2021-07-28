@@ -1,0 +1,31 @@
+.QuiklyButton {
+    display: inline-block;
+    margin-top: 25vh;
+    border-radius: 1.2vh;
+    height: 20vh;
+    width: 45vh;
+    border: none;
+    background-repeat: no-repeat;
+    background: url("https://cdn.quikly.app/img/pagar-hover.png") no-repeat center;
+    box-shadow: 0px 0px 10px grey;
+    background-size: 43vh;
+  }
+  
+  .modal-background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.86);
+  }
+  
+  .modal-card {
+    margin: 0 auto;
+    display: block;
+    margin-top: 5vh;
+    width: 70vh;
+    height: 80vh;
+    background-color: lightgray;
+    border-radius: 1.5vh;
+  }

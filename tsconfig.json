@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESnext",
+    "target": "es5",
     "module": "commonjs",
     "lib": ["es2017", "es7", "es6", "dom"],
     "declaration": true,
@@ -9,9 +9,9 @@
     "jsx": "react" 
    },
      "include": [
-    "src",
-     "src/lib/components", "es/lib", "index.js"
-      ],
+    "src", 
+    "src/lib/components", "src/lib", "index.js" 
+   ],
   "exclude": [
     "node_modules",
     "dist"
