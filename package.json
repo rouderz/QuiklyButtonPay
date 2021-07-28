@@ -1,9 +1,9 @@
 {
   "name": "quiklypay",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "Buttons Pay",
   "main": "index.js",
-  "types": "index.d.ts",
+  "types": "./es/lib/components/Button.d.ts",
   "repository": {
     "url": "git+ssh://git@github.com/rouderz/QuiklyButtonPay.git",
     "type": "git"
