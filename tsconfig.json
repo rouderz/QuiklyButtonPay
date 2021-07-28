@@ -6,12 +6,13 @@
     "declaration": true,
     "strict": true,
     "esModuleInterop": true,
-    "jsx": "react" 
+    "jsx": "react",
+    "outDir": "./lib"
    },
-     "include": [
-    "src", 
-    "src/lib/components", "src/lib", "index.js" 
-   ],
+   "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "dist"

@@ -22,7 +22,6 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "local": "rm -rf dist && NODE_ENV=production && npm run tsc && babel src/lib --out-dir dist/lib --extensions '.ts,.tsx' --copy-files",
     "build": "rm -rf dist && NODE_ENV=production && npm run tsc && babel src/lib --out-dir lib --extensions '.ts,.tsx' --copy-files"
   },
   "bugs": {

@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import './css/style.css';
-import './Button';
 interface buttonInterface {
     parameters: {
         isProduction?: boolean;
@@ -14,5 +13,5 @@ interface buttonInterface {
         disabled?: boolean;
     };
 }
-declare const ButtonQuikly: FunctionComponent<buttonInterface>;
-export default ButtonQuikly;
+declare const Button: FunctionComponent<buttonInterface>;
+export default Button;
