@@ -8,9 +8,6 @@
     "esModuleInterop": true,
     "jsx": "react" 
    },
-   "include": [
-    "es" // <-- change this to where your source files are
-, "es/lib/components", "es/lib", "index.js"  ],
   "exclude": [
     "node_modules",
     "dist"
