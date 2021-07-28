@@ -1,3 +1,3 @@
-import ButtonQuikly from './es/lib/components/Button';
+import ButtonQuikly from './src/lib/components/Button';
 
 export {ButtonQuikly};
