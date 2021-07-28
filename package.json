@@ -1,6 +1,6 @@
 {
   "name": "quiklypay",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "description": "Buttons Pay",
   "main": "src/lib/index.js",
   "types": "src/lib/components/Button.d.ts",
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "local": "rm -rf dist && NODE_ENV=production && npm run tsc && babel es/lib --out-dir dist/lib --extensions '.ts,.tsx' --copy-files",
-    "build": "NODE_ENV=production && npm run tsc && babel src/lib --out-dir src/lib --extensions '.ts,.tsx' --copy-files"
+    "local": "rm -rf dist && NODE_ENV=production && npm run tsc && babel src/lib --out-dir dist/lib --extensions '.ts,.tsx' --copy-files",
+    "build": "NODE_ENV=production && npm run tsc && babel src/lib --out-dir es/lib --extensions '.ts,.tsx' --copy-files"
   },
   "bugs": {
     "url": "https://github.com/rouderz/QuiklyButtonPay/issues"
