@@ -39,46 +39,34 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
       }, 5000);
   `;
 
+  const Alerts = (title: string, text: string) => {
+    Swal.fire({
+      icon: 'error',
+      title: title,
+      text: text,
+    })
+  }
+
   const validations = (params: buttonInterface) => {
    if(Object.keys(params.parameters).length === 0){
-     Swal.fire({
-       icon: 'error',
-       title: 'Parametros Vacios',
-       text: 'No pueden estar vacios los parametros',
-     })
+     Alerts('Parametros Vacios', 'No pueden estar vacios los parametros')
      return setModalVisible(false);
    }
    if(!validator.isURL(params.parameters.successRedirect)){
-     Swal.fire({
-       icon: 'error',
-       title: 'Datos Erroneos',
-       text: 'La Url ingresada no es valida',
-     })
+     Alerts('Datos Erróneos', 'La Url ingresada no es válida')
      return setModalVisible(false);
    }
    if(!validator.isURL(params.parameters.errorRedirect)){
-     Swal.fire({
-       icon: 'error',
-       title: 'Datos Erroneos',
-       text: 'La Url ingresada no es valida',
-     })
+     Alerts('Datos Erróneos', 'La Url ingresada no es válida')
      return setModalVisible(false);
    }
    if(!validator.isEmail(params.parameters.email)){
-     Swal.fire({
-       icon: 'error',
-       title: 'Datos Erroneos',
-       text: 'El email no es valido',
-     })
+     Alerts('Datos Erróneos', 'El email no es valido')
      return setModalVisible(false);
    }
    if(!validator.isEmail(params.parameters.receiveEmail)){
-     Swal.fire({
-       icon: 'error',
-       title: 'Datos Erroneos',
-       text: 'El email no es valido',
-     })
-     return setModalVisible(false);
+    Alerts('Datos Erróneos', 'El email no es valido')
+    return setModalVisible(false);
    }
    return setModalVisible(true)
  }

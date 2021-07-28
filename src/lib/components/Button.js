@@ -47,54 +47,37 @@ var Button = function Button(_ref) {
 
   var customFunction = "\n      parameters = {\n         isProduction: ".concat(parameters.isProduction ? parameters.isProduction : false, ",\n         amount: \"").concat(parameters.amount, "\",\n         fullName: \"").concat(parameters.fullName, "\",\n         email: \"").concat(parameters.email, "\",\n         receiveEmail: \"").concat(parameters.receiveEmail, "\",\n         receiveName: \"").concat(parameters.receiveName, "\",\n         successRedirect: \"").concat(parameters.successRedirect, "\",\n         errorRedirect: \"").concat(parameters.errorRedirect, "\"              \n      },\n      setTimeout(function () {\n         iframe.contentWindow.postMessage(parameters, '*');\n      }, 5000);\n  ");
 
+  var Alerts = function Alerts(title, text) {
+    _sweetalert["default"].fire({
+      icon: 'error',
+      title: title,
+      text: text
+    });
+  };
+
   var validations = function validations(params) {
     if (Object.keys(params.parameters).length === 0) {
-      _sweetalert["default"].fire({
-        icon: 'error',
-        title: 'Parametros Vacios',
-        text: 'No pueden estar vacios los parametros'
-      });
-
+      Alerts('Parametros Vacios', 'No pueden estar vacios los parametros');
       return setModalVisible(false);
     }
 
     if (!_validator["default"].isURL(params.parameters.successRedirect)) {
-      _sweetalert["default"].fire({
-        icon: 'error',
-        title: 'Datos Erroneos',
-        text: 'La Url ingresada no es valida'
-      });
-
+      Alerts('Datos Erróneos', 'La Url ingresada no es válida');
       return setModalVisible(false);
     }
 
     if (!_validator["default"].isURL(params.parameters.errorRedirect)) {
-      _sweetalert["default"].fire({
-        icon: 'error',
-        title: 'Datos Erroneos',
-        text: 'La Url ingresada no es valida'
-      });
-
+      Alerts('Datos Erróneos', 'La Url ingresada no es válida');
       return setModalVisible(false);
     }
 
     if (!_validator["default"].isEmail(params.parameters.email)) {
-      _sweetalert["default"].fire({
-        icon: 'error',
-        title: 'Datos Erroneos',
-        text: 'El email no es valido'
-      });
-
+      Alerts('Datos Erróneos', 'El email no es valido');
       return setModalVisible(false);
     }
 
     if (!_validator["default"].isEmail(params.parameters.receiveEmail)) {
-      _sweetalert["default"].fire({
-        icon: 'error',
-        title: 'Datos Erroneos',
-        text: 'El email no es valido'
-      });
-
+      Alerts('Datos Erróneos', 'El email no es valido');
       return setModalVisible(false);
     }
 
