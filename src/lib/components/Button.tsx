@@ -14,7 +14,8 @@ interface buttonInterface {
      receiveName: string
      successRedirect: string
      errorRedirect: string
-     disabled?: boolean
+     disabled?: boolean,
+     divisa: string
    }
  }
 
@@ -32,7 +33,8 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
          receiveEmail: "${parameters.receiveEmail}",
          receiveName: "${parameters.receiveName}",
          successRedirect: "${parameters.successRedirect}",
-         errorRedirect: "${parameters.errorRedirect}"              
+         errorRedirect: "${parameters.errorRedirect}",
+         divisa: "${parameters.divisa}"              
       },
       setTimeout(function () {
          iframe.contentWindow.postMessage(parameters, '*');
@@ -66,6 +68,10 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
    }
    if(!validator.isEmail(params.parameters.receiveEmail)){
     Alerts('Datos Erróneos', 'El email no es valido')
+    return setModalVisible(false);
+   }
+   if(!validator.isEmpty(params.parameters.divisa)){
+    Alerts('Datos Erróneos', 'La divisa no puede estar vacia')
     return setModalVisible(false);
    }
    return setModalVisible(true)

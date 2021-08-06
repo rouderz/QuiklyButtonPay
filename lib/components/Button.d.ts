@@ -11,6 +11,7 @@ interface buttonInterface {
         successRedirect: string;
         errorRedirect: string;
         disabled?: boolean;
+        divisa: string;
     };
 }
 declare const Button: FunctionComponent<buttonInterface>;
