@@ -7,7 +7,7 @@ import './css/style.css';
 interface buttonInterface {
    parameters: {
      isProduction?: boolean
-     amount: string
+     amount: number
      fullName: string
      email: string
      receiveEmail: string
@@ -27,7 +27,7 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
    const customFunction = `
       parameters = {
          isProduction: ${parameters.isProduction ? parameters.isProduction : false},
-         amount: "${parameters.amount}",
+         amount: ${parameters.amount},
          fullName: "${parameters.fullName}",
          email: "${parameters.email}",
          receiveEmail: "${parameters.receiveEmail}",

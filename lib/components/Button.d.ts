@@ -3,7 +3,7 @@ import './css/style.css';
 interface buttonInterface {
     parameters: {
         isProduction?: boolean;
-        amount: string;
+        amount: number;
         fullName: string;
         email: string;
         receiveEmail: string;
