@@ -4,7 +4,7 @@ import validator from 'validator';
 import Swal from 'sweetalert2';
 import './css/style.css';
 
-interface buttonInterface {
+interface ButtonInterface {
    parameters: {
      isProduction?: boolean
      amount: number
@@ -15,11 +15,10 @@ interface buttonInterface {
      successRedirect: string
      errorRedirect: string
      disabled?: boolean,
-     divisa: string
    }
  }
 
-const Button:FunctionComponent<buttonInterface> = ({parameters}) => { 
+const Button:FunctionComponent<ButtonInterface> = ({parameters}) => { 
    const [isModalVisible, setModalVisible] = useState<Boolean>(false);
 
    if(!validator.isEmail(parameters.email)){}
@@ -34,7 +33,6 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
          receiveName: "${parameters.receiveName}",
          successRedirect: "${parameters.successRedirect}",
          errorRedirect: "${parameters.errorRedirect}",
-         divisa: "${parameters.divisa}"              
       },
       setTimeout(function () {
          iframe.contentWindow.postMessage(parameters, '*');
@@ -49,7 +47,7 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
     })
   }
 
-  const validations = (params: buttonInterface) => {
+  const validations = (params: ButtonInterface) => {
    if(Object.keys(params.parameters).length === 0){
      Alerts('Parametros Vacios', 'No pueden estar vacios los parametros')
      return setModalVisible(false);
@@ -68,10 +66,6 @@ const Button:FunctionComponent<buttonInterface> = ({parameters}) => {
    }
    if(!validator.isEmail(params.parameters.receiveEmail)){
     Alerts('Datos Erróneos', 'El email no es valido')
-    return setModalVisible(false);
-   }
-   if(!validator.isEmpty(params.parameters.divisa)){
-    Alerts('Datos Erróneos', 'La divisa no puede estar vacia')
     return setModalVisible(false);
    }
    return setModalVisible(true)

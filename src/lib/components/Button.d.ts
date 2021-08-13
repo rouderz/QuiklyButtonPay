@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import './css/style.css';
 import './Button';
-interface buttonInterface {
+interface ButtonInterface {
     parameters: {
         isProduction?: boolean;
         amount: string;
@@ -14,5 +14,5 @@ interface buttonInterface {
         disabled?: boolean;
     };
 }
-declare const ButtonQuikly: FunctionComponent<buttonInterface>;
+declare const ButtonQuikly: FunctionComponent<ButtonInterface>;
 export default ButtonQuikly;

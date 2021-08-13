@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import './css/style.css';
-interface buttonInterface {
+interface ButtonInterface {
     parameters: {
         isProduction?: boolean;
         amount: number;
@@ -11,8 +11,7 @@ interface buttonInterface {
         successRedirect: string;
         errorRedirect: string;
         disabled?: boolean;
-        divisa: string;
     };
 }
-declare const Button: FunctionComponent<buttonInterface>;
+declare const Button: FunctionComponent<ButtonInterface>;
 export default Button;
