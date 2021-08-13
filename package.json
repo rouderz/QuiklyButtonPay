@@ -1,6 +1,6 @@
 {
   "name": "quiklypay",
-  "version": "1.0.43",
+  "version": "1.0.44",
   "description": "Buttons Pay",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -18,9 +18,11 @@
     "react": "^17.0.2",
     "react-helmet": "^6.1.0",
     "sweetalert2": "^11.0.19",
+    "tslint": "^6.1.3",
     "validator": "^13.6.0"
   },
   "scripts": {
+    "fix": "yarn tslint 'src/**/*.ts'",
     "tsc": "tsc",
     "build": "rm -rf dist && NODE_ENV=production && npm run tsc && babel src/lib --out-dir lib --extensions '.ts,.tsx' --copy-files"
   },
