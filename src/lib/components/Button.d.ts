@@ -12,6 +12,7 @@ interface ButtonInterface {
         successRedirect: string;
         errorRedirect: string;
         disabled?: boolean;
+        paymentGateway?: string;
     };
 }
 declare const ButtonQuikly: FunctionComponent<ButtonInterface>;

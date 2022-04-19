@@ -32,6 +32,7 @@ const Component = () => {
      successRedirect: string
      errorRedirect: string
      disabled: boolean
+     paymentGateway: string
     }
 
     return (
@@ -63,6 +64,7 @@ const Component = () => {
                 successRedirect: string
                 errorRedirect: string
                 disabled: boolean
+                paymentGateway: string
             }}>
         </>
     )
@@ -84,4 +86,5 @@ export default Component;
     successRedirect: string -> (required)
     errorRedirect: string -> (required)
     disabled: boolean -> (optional)
+    paymentGateway: string -> (optional)
 ```

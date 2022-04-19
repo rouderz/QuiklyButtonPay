@@ -1,10 +1,9 @@
 import { FunctionComponent } from 'react';
 import './css/style.css';
-import './Button';
 interface ButtonInterface {
     parameters: {
         isProduction?: boolean;
-        amount: string;
+        amount: number;
         fullName: string;
         email: string;
         receiveEmail: string;
@@ -12,7 +11,8 @@ interface ButtonInterface {
         successRedirect: string;
         errorRedirect: string;
         disabled?: boolean;
+        paymentGateway?: string;
     };
 }
-declare const ButtonQuikly: FunctionComponent<ButtonInterface>;
-export default ButtonQuikly;
+declare const Button: FunctionComponent<ButtonInterface>;
+export default Button;
