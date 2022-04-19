@@ -81,6 +81,16 @@ const Button: FunctionComponent<ButtonInterface> = ({ parameters }) => {
         isModalVisible ?
           <div hidden={!isModalVisible}>
             <div className="modal-background" onClick={() => setModalVisible(false)}>
+              {
+                parameters.paymentGateway === 'Square' ?
+                <iframe className="modal-card"
+                src="https://paybox.quikly.app/cdn/reactjs/square.html"
+                width="100%"
+                height="100%"
+                scrolling="no"
+                id="iframe"
+              />
+              :
               <iframe className="modal-card"
                 src="https://paybox.quikly.app/cdn/reactjs/paybox.html"
                 width="100%"
@@ -88,6 +98,7 @@ const Button: FunctionComponent<ButtonInterface> = ({ parameters }) => {
                 scrolling="no"
                 id="iframe"
               />
+              }
               <Helmet>
                 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
                 <script type="text/javascript">{customFunction}</script>
